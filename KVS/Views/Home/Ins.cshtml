@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewBag.Title = "Ins";
+}
+
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,900&display=swap" rel="stylesheet">
+</head>
+<style>
+    body {
+        text-align: left;
+        padding: 40px 0;
+        background: #EBF0F5;
+    }
+
+    h1 {
+        color: #88B04B;
+        font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+        font-weight: 900;
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        color: #404F5E;
+        font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+        font-size: 20px;
+        margin: 0;
+    }
+
+    i {
+        color: #9ABC66;
+        font-size: 100px;
+        line-height: 200px;
+        margin-left: -15px;
+    }
+
+    .card {
+        background: white;
+        padding: 60px;
+        border-radius: 4px;
+        box-shadow: 0 2px 3px #C8D0D8;
+        display: inline-block;
+        margin: 0 auto;
+    }
+</style>
+<body>
+    <div class="card">
+        <div style="border-radius:50px; height:50px; width:50px; background: #F8FAF5; margin:0 auto;">
+            <i class="checkmark">✓</i>
+        </div>
+        <h2>@Html.ActionLink("Go for Vote", "Index", "Home")</h2>
+        <h1>Voting Instructions </h1>
+
+        <p>
+            1. Election will be conducted Sunday 02 October 2022. Voting window will
+            be open From 02:00 PM to 05:00 PM.
+
+        </p>
+        <p>
+            2. Mode of Voting will be online.
+        </p>
+        <p>
+            3. We need to select 4 RWA members. Any member can be selected from the given
+            names.
+        </p>
+        <p>
+            4. Voting link will be shared on both personal email ID and WhatsApp number of
+            every individual. <b>Please keep your token code confidential.</b>
+        </p>
+
+        <p>5. Voting can be done only once then link will be expired. </p>
+        <p>
+            6. Only 4 votes will be allowed to each individual.Less than 4 or more than 4 votes will
+            not be selected. Only 4 votes will be selected.
+        </p>
+        <p>
+            <b>
+                7. Individual can verfy thier cast vote after it is successful.
+                Please take screen shot of success screen and keep it confidential for future refence.
+                The result will update with token code, Individual can verify that their vote has gone to right person.
+            </b>
+
+        </p>
+        <h2>@Html.ActionLink("Go for Vote", "Index", "Home")</h2>
+    </div>
+    
+</body>
+</html>
+
+

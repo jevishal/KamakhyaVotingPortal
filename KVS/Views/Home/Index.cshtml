@@ -1,0 +1,125 @@
+﻿@model KVS.Models.CustomVote
+@{
+    ViewBag.Title = "Home Page";
+    ViewBag.Success = "";
+
+}
+
+
+<h3>Kamakhya Voting Portal 2022-23</h3>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+
+    <h4>@Html.ActionLink("Voting Instructions", "Ins", "Home")</h4><h6><b>*</b>See voting instructions before vote.</h6>
+    <hr />
+    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+    
+    <div class="form-group">
+        <label class="control-label col-md-5 pt">DHEERAJ MISHRA (B-21)</label>
+        <div class="col-xs-1 pl">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.DHEERAJ_MISHRA_B21)
+                @Html.ValidationMessageFor(model => model.DHEERAJ_MISHRA_B21, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-5 pt">MOHSIN KHAN (A-3)</label>
+        <div class="col-xs-1 pl">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.MOHSIN_KHAN_A3)
+                @Html.ValidationMessageFor(model => model.MOHSIN_KHAN_A3, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-5 pt">ASHISH GUPTA (A-27)</label>
+        <div class="col-xs-1 pl">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.ASHISH_GUPTA_A27)
+                @Html.ValidationMessageFor(model => model.ASHISH_GUPTA_A27, "", new { @class = "text-danger col-md-5" })
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-5 pt">RAM KUMAR (B-26)</label>
+        <div class="col-xs-1 pl">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.RAM_KUMAR_B26)
+                @Html.ValidationMessageFor(model => model.RAM_KUMAR_B26, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-5 pt">TARUN KUMAR (C-31)</label>
+        <div class="col-xs-1 pl">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.TARUN_KUMAR_C31)
+                @Html.ValidationMessageFor(model => model.TARUN_KUMAR_C31, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-md-5 pt">ASHISH TRIPATHI (C-29)</label>
+        <div class="col-xs-1 pl">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.ASHISH_TRIPATHI_C29)
+                @Html.ValidationMessageFor(model => model.ASHISH_TRIPATHI_C29, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+
+        <label class="control-label col-md-5 pt">AGRAZ SHARMA (A-17)</label>
+        <div class="col-xs-1 pl">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.AGRAZ_SHARMA_A17)
+                @Html.ValidationMessageFor(model => model.AGRAZ_SHARMA_A17, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-5 pt">PARWESH RANJAN DEEPAK (B-13/14) </label>
+        <div class="col-xs-1 pl">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.PARWESH_RANJAN_DEEPAK_B13_14)
+                @Html.ValidationMessageFor(model => model.PARWESH_RANJAN_DEEPAK_B13_14, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-5 pt">Token Code</label>
+        <div class="col-md-5">
+            @Html.EditorFor(model => model.Token, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Token, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save Votes" class="btn btn-default alert-success" />
+        </div>
+    </div>
+</div>
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+
+

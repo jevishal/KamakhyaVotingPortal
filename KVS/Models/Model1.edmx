@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DemoSSISModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Token">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TokenCode" Type="varchar" MaxLength="6" />
+          <Property Name="Status" Type="bit" />
+        </EntityType>
+        <EntityType Name="Vote">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="A26" Type="bit" />
+          <Property Name="A13" Type="bit" />
+          <Property Name="A28" Type="bit" />
+          <Property Name="C27" Type="bit" />
+          <Property Name="A24" Type="bit" />
+          <Property Name="B19" Type="bit" />
+          <Property Name="B59" Type="bit" />
+          <Property Name="B46" Type="bit" />
+          <Property Name="B52" Type="bit" />
+          <Property Name="Token" Type="varchar" MaxLength="6" />
+        </EntityType>
+        <EntityType Name="Vote_Sept22">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DHEERAJ MISHRA-B21" Type="bit" />
+          <Property Name="MOHSIN KHAN-A3" Type="bit" />
+          <Property Name="ASHISH GUPTA-A27" Type="bit" />
+          <Property Name="RAM KUMAR-B26" Type="bit" />
+          <Property Name="TARUN KUMAR-C31" Type="bit" />
+          <Property Name="ASHISH TRIPATHI-C29" Type="bit" />
+          <Property Name="AGRAZ SHARMA-A17" Type="bit" />
+          <Property Name="PARWESH RANJAN DEEPAK-B13 14" Type="bit" />
+          <Property Name="Token" Type="varchar" MaxLength="6" />
+        </EntityType>
+        <EntityContainer Name="DemoSSISModelStoreContainer">
+          <EntitySet Name="Token" EntityType="Self.Token" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vote" EntityType="Self.Vote" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vote_Sept22" EntityType="Self.Vote_Sept22" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DemoSSISModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DemoSSISEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Votes" EntityType="DemoSSISModel.Vote" />
+          <EntitySet Name="Tokens" EntityType="DemoSSISModel.Token" />
+          <EntitySet Name="Vote_Sept22" EntityType="DemoSSISModel.Vote_Sept22" />
+        </EntityContainer>
+        <EntityType Name="Vote">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="A26" Type="Boolean" />
+          <Property Name="A13" Type="Boolean" />
+          <Property Name="A28" Type="Boolean" />
+          <Property Name="C27" Type="Boolean" />
+          <Property Name="A24" Type="Boolean" />
+          <Property Name="B19" Type="Boolean" />
+          <Property Name="B59" Type="Boolean" />
+          <Property Name="B46" Type="Boolean" />
+          <Property Name="B52" Type="Boolean" />
+          <Property Name="Token" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Token">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TokenCode" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Vote_Sept22">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DHEERAJ_MISHRA_B21" Type="Boolean" />
+          <Property Name="MOHSIN_KHAN_A3" Type="Boolean" />
+          <Property Name="ASHISH_GUPTA_A27" Type="Boolean" />
+          <Property Name="RAM_KUMAR_B26" Type="Boolean" />
+          <Property Name="TARUN_KUMAR_C31" Type="Boolean" />
+          <Property Name="ASHISH_TRIPATHI_C29" Type="Boolean" />
+          <Property Name="AGRAZ_SHARMA_A17" Type="Boolean" />
+          <Property Name="PARWESH_RANJAN_DEEPAK_B13_14" Type="Boolean" />
+          <Property Name="Token" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DemoSSISModelStoreContainer" CdmEntityContainer="DemoSSISEntities">
+          <EntitySetMapping Name="Votes">
+            <EntityTypeMapping TypeName="DemoSSISModel.Vote">
+              <MappingFragment StoreEntitySet="Vote">
+                <ScalarProperty Name="Token" ColumnName="Token" />
+                <ScalarProperty Name="B52" ColumnName="B52" />
+                <ScalarProperty Name="B46" ColumnName="B46" />
+                <ScalarProperty Name="B59" ColumnName="B59" />
+                <ScalarProperty Name="B19" ColumnName="B19" />
+                <ScalarProperty Name="A24" ColumnName="A24" />
+                <ScalarProperty Name="C27" ColumnName="C27" />
+                <ScalarProperty Name="A28" ColumnName="A28" />
+                <ScalarProperty Name="A13" ColumnName="A13" />
+                <ScalarProperty Name="A26" ColumnName="A26" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tokens">
+            <EntityTypeMapping TypeName="DemoSSISModel.Token">
+              <MappingFragment StoreEntitySet="Token">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="TokenCode" ColumnName="TokenCode" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vote_Sept22">
+            <EntityTypeMapping TypeName="DemoSSISModel.Vote_Sept22">
+              <MappingFragment StoreEntitySet="Vote_Sept22">
+                <ScalarProperty Name="Token" ColumnName="Token" />
+                <ScalarProperty Name="PARWESH_RANJAN_DEEPAK_B13_14" ColumnName="PARWESH RANJAN DEEPAK-B13 14" />
+                <ScalarProperty Name="AGRAZ_SHARMA_A17" ColumnName="AGRAZ SHARMA-A17" />
+                <ScalarProperty Name="ASHISH_TRIPATHI_C29" ColumnName="ASHISH TRIPATHI-C29" />
+                <ScalarProperty Name="TARUN_KUMAR_C31" ColumnName="TARUN KUMAR-C31" />
+                <ScalarProperty Name="RAM_KUMAR_B26" ColumnName="RAM KUMAR-B26" />
+                <ScalarProperty Name="ASHISH_GUPTA_A27" ColumnName="ASHISH GUPTA-A27" />
+                <ScalarProperty Name="MOHSIN_KHAN_A3" ColumnName="MOHSIN KHAN-A3" />
+                <ScalarProperty Name="DHEERAJ_MISHRA_B21" ColumnName="DHEERAJ MISHRA-B21" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
